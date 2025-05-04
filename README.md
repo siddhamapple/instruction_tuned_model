@@ -1,100 +1,57 @@
-LLM Project: Building a Large Language Model From Scratch
-This repository contains the implementation of a Large Language Model (LLM) built following Sebastian Raschka's "Build a Large Language Model From Scratch" book. The project demonstrates the complete pipeline of building, training, and fine-tuning an LLM.
+# LLM Project: Building a Large Language Model From Scratch
 
-Project Overview
-This project follows the three main stages of building an LLM:
+This repository contains an end-to-end implementation of a Large Language Model (LLM) pipeline, inspired by Sebastian Raschka's book ["Build a Large Language Model From Scratch"](https://www.manning.com/books/build-a-large-language-model-from-scratch).
 
-Stage 1: Foundation Model
+## Project Overview
 
-Data preparation and sampling
+The project demonstrates all major steps of building, pretraining, and fine-tuning a transformer-based language model:
+- **Stage 1:** Foundation model pretraining (unsupervised)
+- **Stage 2:** Fine-tuning for classification (e.g., blog categorization)
+- **Stage 3:** Instruction fine-tuning to build a personal assistant/chatbot
 
-Implementing attention mechanisms
+## Key Components
 
-Building the LLM architecture
+- `blog_classifier/` - Code and weights for a DistilBERT-based blog classifier (World, Sports, Business, Sci/Tech)
+- `models/` - Final instruction-tuned LLM weights and configs (using Alpaca for best results)
+- `code_notebooks/` - Jupyter notebooks for training, inference, and pushing models to GitHub:
+  - `project_run_all_model.ipynb` (Colab): Full pipeline runner
+  - `blog_classifier.ipynb` (Colab): Blog classifier training
+  - `blog_classifier_using.ipynb` (Colab): Blog classifier inference
+  - `Pushing_blog_classifier_to_github.ipynb` (Colab): Git/GitHub automation
 
-Pretraining on unlabeled data
+## Features
 
-Stage 2: Classification Model
+- **Blog classification** with high accuracy
+- **Instruction-following LLM** (Alpaca-tuned) for summarization, keyword extraction, and Q&A
+- **Mindmap and main points extraction** from text
+- **Easy-to-use Colab/Kaggle notebooks**
 
-Loading pretrained weights
+## Model Details
 
-Fine-tuning for text classification
+- **Final code uses an Alpaca instruction-tuned model** for higher quality results in instruction following and text generation tasks.
+- All models are implemented in PyTorch and Hugging Face Transformers.
 
-Evaluating the classifier
+## Usage
 
-Stage 3: Instruction-Following Assistant
+1. Clone the repo and follow the notebook instructions in `code_notebooks/`.
+2. For blog classification, use the scripts in `blog_classifier/`.
+3. For advanced summarization and instruction tasks, use the Alpaca-based model in `models/`.
 
-Fine-tuning on instruction datasets
+## Requirements
 
-Creating a personal assistant model
+- Python 3.8+
+- PyTorch
+- Transformers
+- Datasets
+- NLTK
+- scikit-learn
+- matplotlib, networkx (for mindmaps)
 
-Evaluating response quality
+## Credits
 
-Key Components
-The repository contains several notebooks:
+Based on [Sebastian Raschka's book](https://www.manning.com/books/build-a-large-language-model-from-scratch) & inspired by the Stanford Alpaca project.
 
-blog_classifier.ipynb: Implementation of a blog classification model
+---
 
-blog_classifier_using.ipynb: Code for using the blog classifier
-
-project_run_all_model.ipynb: Complete pipeline for training and using the models
-
-Pushing_blog_classifier_to_github.ipynb: Code for pushing models to GitHub
-
-Models
-The project uses multiple models:
-
-A blog classifier based on DistilBERT that categorizes blogs into four categories: World, Sports, Business, and Sci/Tech
-
-An instruction-tuned model for generating responses to various instructions
-
-The final implementation uses an Alpaca-trained model for improved results
-
-Features
-Text classification
-
-Text summarization
-
-Keyword extraction
-
-Mind map generation
-
-Custom instruction processing
-
-Usage
-The models can be used for:
-
-Classifying blog posts into categories
-
-Generating summaries of text
-
-Extracting keywords from documents
-
-Creating mind maps of content
-
-Answering questions and following instructions
-
-Technical Details
-The instruction fine-tuning uses the Alpaca dataset (52,002 entries) for better performance
-
-Models are implemented using PyTorch
-
-The architecture is based on the transformer decoder (GPT-style)
-
-The system first classifies input text and then processes it according to instructions
-
-Requirements
-PyTorch
-
-Transformers
-
-NLTK
-
-NetworkX
-
-Matplotlib
-
-Scikit-learn
-
-Acknowledgements
-This project is based on the concepts and techniques presented in "Build a Large Language Model From Scratch" by Sebastian Raschka.
+**Note:**  
+The final code and demos use an Alpaca instruction-tuned model for best results in instruction-following and generation tasks.
