@@ -12,7 +12,7 @@ The project demonstrates all major steps of building, pretraining, and fine-tuni
 ## Key Components
 
 - `blog_classifier/` - Code and weights for a DistilBERT-based blog classifier (World, Sports, Business, Sci/Tech)
-- `models/` - Final instruction-tuned LLM weights and configs (using Alpaca for best results)
+- `models_alpaca/` - Final instruction-tuned LLM weights and configs (using Alpaca for best results)
 - `code_notebooks/` - Jupyter notebooks for training, inference, and pushing models to GitHub:
   - `project_run_all_model.ipynb` (Colab): Full pipeline runner
   - `blog_classifier.ipynb` (Colab): Blog classifier training
