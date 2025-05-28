@@ -18,6 +18,7 @@ The project demonstrates all major steps of building, pretraining, and fine-tuni
   - `blog_classifier.ipynb` (Colab): Blog classifier training
   - `blog_classifier_using.ipynb` (Colab): Blog classifier inference
   - `Pushing_blog_classifier_to_github.ipynb` (Colab): Git/GitHub automation
+  - `Run all code` - This is the main code to use this project
 
 ## Features
 
